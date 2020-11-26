@@ -1,0 +1,102 @@
+<div>
+    <h5>SENSOR DATA</h5>
+</div>
+<div id="tableDiv">
+
+</div>
+<script>
+    const tableHeadLabels = ["s/n", "Image", "Temperature (C)", "Sound Pitch", "Details", "Captured", "Time"]
+    const tableHeadIndex = ["imageURL", "firstName", "lastName", "_id", "age", "dateCaptured"]
+    const totalData = 4
+    const tableBodyData = [
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 38.1,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img1.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 34.3,
+            lastName: `Normal`,
+            imageURL: `<img src="/image/img2.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 35.8,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img3.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 36.4,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img4.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        }        
+    ]
+
+    let mainDiv = document.getElementById("tableDiv")
+    let mainTable = document.createElement("table")
+    mainTable.setAttribute("style", "border-radius: 5px 5px 0 0;overflow: hidden;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin: 20px 0;font-size: 0.9em;Table")    //table class name
+    mainDiv.appendChild(mainTable)
+
+
+    //Set table head
+    //params:   mainTable, tableHeadLabels
+    function setTableHead(){
+        let tableHead = document.createElement("thead")
+        let tableHeadRow = document.createElement("tr")
+        tableHeadRow.setAttribute("style", "background-color: blue;color: white;font-weight: bold;")
+        tableHead.append(tableHeadRow)
+        tableHeadLabels.forEach((singleLabel) => {
+            let tableHeadItem = document.createElement("th")
+            tableHeadItem.innerHTML = singleLabel
+            tableHeadRow.append(tableHeadItem)
+        })
+
+        mainTable.append(tableHeadRow)
+    }
+
+    //Set table Boby
+    //params:   tableBodyData, totalData, tableHeadLabels, tableHeadIndex
+    function setTableBody(){
+        tableBody = document.createElement("tbody")
+        for(let i = 0; i < totalData; i++ ){
+            let tableBodyRow = document.createElement("tr")
+            let tableBodyRowItem = document.createElement("td")
+            tableBodyRowItem.setAttribute("style", "padding: 10px 20px")
+            tableBodyRowItem.innerHTML = i + 1
+            tableBodyRow.append(tableBodyRowItem)
+            for(let j = 0; j < tableHeadLabels.length - 1; j++){
+                let tableBodyRowItem = document.createElement("td")
+                tableBodyRowItem.setAttribute("style", "padding: 10px 15px")
+                tableBodyRowItem.innerHTML = tableBodyData[i][tableHeadIndex[j]]
+                tableBodyRow.append(tableBodyRowItem)
+            }
+            tableBody.append(tableBodyRow)
+        }
+        mainTable.append(tableBody)
+    }
+
+    setTableHead()
+    setTableBody()
+    //mainDiv.append(mainTable)
+
+    
+</script>

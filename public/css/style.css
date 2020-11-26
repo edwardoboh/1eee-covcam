@@ -1,0 +1,13 @@
+p {
+    margin: 10px 0 !important;
+}
+
+.login-container {
+    width: 460px;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.covid-text {
+    margin-left: 5px;
+}

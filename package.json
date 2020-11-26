@@ -1,0 +1,32 @@
+{
+  "name": "ieee-covid19",
+  "version": "1.0.0",
+  "description": "IEEE COVID19 STUDENTS PROJECT",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "edwardoboh",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "gridfs-stream": "^1.1.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.15",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "handlebars": "^4.5.0",
+    "nodemon": "^2.0.6"
+  },
+  "engines": {
+    "node" : "14.15"
+  }
+}

@@ -1,0 +1,105 @@
+<div>
+    <h5>ALL CAPTURED DATA</h5>
+</div>
+<div id="tableDiv">
+
+</div>
+<script>
+    const tableHeadLabels = ["s/n", "Image", "First Name", "Last Name", "ID", "Sex", "Age", "Date Captured"]
+    const tableHeadIndex = ["imageURL", "firstName", "lastName", "_id", "sex", "age", "dateCaptured"]
+
+    const tableBodyData = [
+        {
+            _id: "5fbbc22442c411ac60bc4e34",
+            firstName: "Apple",
+            lastName: "Pie",
+            imageURL: "http://localhost:4000/api/user",
+            sex: "fruit",
+            age: 23,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: "5fbbc22442c411ac60bc4e34",
+            firstName: "orange",
+            lastName: "Pie",
+            imageURL: "http://localhost:4000/api/user",
+            sex: "fruit",
+            age: 23,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: "5fbbc22442c411ac60bc4e34",
+            firstName: "pear",
+            lastName: "Pie",
+            imageURL: "http://localhost:4000/api/user",
+            sex: "fruit",
+            age: 23,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: "5fbbc22442c411ac60bc4e34",
+            firstName: "mango",
+            lastName: "Pie",
+            imageURL: "http://localhost:4000/api/user",
+            sex: "fruit",
+            age: 23,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        }        
+    ]
+
+
+    const totalData = tableBodyData.length
+
+    let mainDiv = document.getElementById("tableDiv")
+    let mainTable = document.createElement("table")
+    mainTable.setAttribute("style", "border-radius: 5px 5px 0 0;overflow: hidden;box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);margin: 20px 0;font-size: 0.9em;Table")    //table class name
+    mainTable.setAttribute("class", "striped")
+    mainDiv.appendChild(mainTable)
+
+
+    //Set table head
+    //params:   mainTable, tableHeadLabels
+    function setTableHead(){
+        let tableHead = document.createElement("thead")
+        let tableHeadRow = document.createElement("tr")
+        tableHeadRow.setAttribute("style", "background-color: red;color: white;font-weight: bold;")
+        tableHead.append(tableHeadRow)
+        tableHeadLabels.forEach((singleLabel) => {
+            let tableHeadItem = document.createElement("th")
+            tableHeadItem.setAttribute("style", "position: sticky; top: 0")
+            tableHeadItem.innerHTML = singleLabel
+            tableHeadRow.append(tableHeadItem)
+        })
+
+        mainTable.append(tableHeadRow)
+    }
+
+    //Set table Boby
+    //params:   tableBodyData, totalData, tableHeadLabels, tableHeadIndex
+    function setTableBody(){
+        tableBody = document.createElement("tbody")
+        for(let i = 0; i < totalData; i++ ){
+            let tableBodyRow = document.createElement("tr")
+            let tableBodyRowItem = document.createElement("td")
+            tableBodyRowItem.setAttribute("style", "padding: 10px 20px")
+            tableBodyRowItem.innerHTML = i + 1
+            tableBodyRow.append(tableBodyRowItem)
+            for(let j = 0; j < tableHeadLabels.length - 1; j++){
+                let tableBodyRowItem = document.createElement("td")
+                tableBodyRowItem.setAttribute("style", "padding: 10px 15px")
+                tableBodyRowItem.innerHTML = tableBodyData[i][tableHeadIndex[j]]
+                tableBodyRow.append(tableBodyRowItem)
+            }
+            tableBody.append(tableBodyRow)
+        }
+        mainTable.append(tableBody)
+    }
+
+    setTableHead()
+    setTableBody()
+    //mainDiv.append(mainTable)
+</script>

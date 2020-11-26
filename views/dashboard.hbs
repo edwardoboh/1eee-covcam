@@ -1,0 +1,182 @@
+
+<div class="">
+    <h5 style="font-family: loto;">Data Captured</h4>
+    <div class="divider"></div>
+    <div class="row" style="margin-top: 1rem;">
+        <div class="card col  s12" style="padding: 1rem;">
+            <canvas id="myChart1" ></canvas>
+        </div>
+        <div class="card col  s12" style="padding: 1rem;">
+            <canvas id="myChart3"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    Chart.defaults.global.defaultFontFamily = "lato"
+    Chart.defaults.global.defaultFontSize = 16
+    Chart.defaults.global.defaultFontColor = "#777"
+
+    //*****************chart1******************//
+    let uiChart_1 = document.getElementById("myChart1")
+    let uiChartContext_1 = uiChart_1.getContext("2d")
+    let dataChart_1 = new Chart(uiChartContext_1, {
+        type: "bar",
+        data: {
+            labels: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ],
+            datasets: [
+                {
+                    label: "Male",
+                    data: [
+                            10,
+                            20,
+                            15,
+                            60,
+                            21,
+                            33,
+                            56,
+                            10,
+                            23,
+                            18,
+                            7,
+                            16
+                    ],
+                    backgroundColor: "grey",
+                    hoverBorderWidth: .5,
+                    hoverBorderColor: "red"
+                },
+                {
+                    label: "Female",
+                    data: [
+                            8,
+                            12,
+                            5,
+                            30,
+                            12,
+                            23,
+                            46,
+                            20,
+                            31,
+                            8,
+                            17,
+                            6
+                    ],
+                    backgroundColor: "lightblue",
+                    hoverBorderWidth: .5,
+                    hoverBorderColor: "red"
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "BY Months",
+                fontSize: 24,
+                fontColor: "brown"
+            },
+            legend: {
+                position: "top",
+                labels:{
+                    color: "black"
+                }
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20
+                }
+            }
+        }
+    })
+
+
+    //*****************chart3******************//
+
+    let uiChart_3 = document.getElementById("myChart3")
+    let uiChartContext_3 = uiChart_3.getContext("2d")
+    let dataChart_3 = new Chart(uiChartContext_3, {
+        type: "line",
+        data: {
+            labels: [
+                "8 - 15",
+                "16 - 24",
+                "25 - 30",
+                "31 - 39",
+                "40 - 46",
+                "47 - 55",
+                "56 - 60",
+                "61 - 65",
+            ],
+            datasets: [
+                {
+                    label: "Male",
+                    data: [
+                            21,
+                            33,
+                            56,
+                            10,
+                            23,
+                            18,
+                            7,
+                            16
+                    ],
+                    backgroundColor: "grey",
+                    hoverBorderWidth: .5,
+                    hoverBorderColor: "red"
+                },
+                {
+                    label: "Female",
+                    data: [
+                            8,
+                            12,
+                            5,
+                            30,
+                            31,
+                            8,
+                            17,
+                            6
+                    ],
+                    backgroundColor: "pink",
+                    hoverBorderWidth: .5,
+                    hoverBorderColor: "red"
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "BY Age",
+                fontSize: 24,
+                fontColor: "brown"
+            },
+            legend: {
+                position: "top",
+                labels:{
+                    color: "black"
+                }
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20
+                }
+            }
+        }
+    })
+
+
+</script>

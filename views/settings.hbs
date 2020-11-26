@@ -1,0 +1,43 @@
+<h5 style="text-align: center;">Dummy Data to Test DB Connection</h5>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">
+        </span>
+        <form id="addUser">
+            <label for="fname">First Name</label>
+            <input type="text" name="" id="fname">
+
+            <label for="lname">Last Name</label>
+            <input type="text" name="" id="lname">
+
+            <label for="url">Image URL</label>
+            <input type="url" name="" id="url">
+
+            <label for="sex">Sex</label>
+            <input type="text" name="" id="sex">
+            
+            <label for="age">Age</label>
+            <input type="number" name="" id="age">
+            
+            <div>
+                <input type="submit" value="Submit" class="btn" style="margin: 1.2rem 0;">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    const userForm = document.getElementById('addUser')
+    userForm.addEventListener("submit", handleSubmit)
+
+    const fName = document.getElementById("fname").value
+    const lName = document.getElementById("lname").value
+    //const imageUrl = document.getElementById("url").value
+    //const sex = document.getElementById("sex").value
+    //const age = document.getElementById("age").value
+
+    function handleSubmit(event){
+        event.preventDefault()
+        console.log(fName)
+        console.log(lName)
+    }
+</script>
