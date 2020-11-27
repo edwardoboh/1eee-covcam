@@ -1,15 +1,16 @@
 
-<div class="">
+<div class="row">
     <h5 style="font-family: loto;">Data Captured</h4>
     <div class="divider"></div>
-    <div class="row" style="margin-top: 1rem;">
-        <div class="card col  s12" style="padding: 1rem;">
+        <div class="hide-on-med-and-up s12">
+            <span style="color: crimson;">Use a Larger Screen To See All Chart Details</span>
+        </div>
+        <div class="card col s12" style="padding: 1rem;">
             <canvas id="myChart1" ></canvas>
         </div>
-        <div class="card col  s12" style="padding: 1rem;">
+        <div class="card col s12" style="padding: 1rem;">
             <canvas id="myChart3"></canvas>
         </div>
-    </div>
 </div>
 
 <script>
@@ -84,8 +85,8 @@
         options: {
             title: {
                 display: true,
-                text: "BY Months",
-                fontSize: 24,
+                text: "BY Month",
+                fontSize: 20,
                 fontColor: "brown"
             },
             legend: {
@@ -96,8 +97,8 @@
             },
             layout: {
                 padding: {
-                    left: 20,
-                    right: 20
+                    left: 10,
+                    right: 10
                 }
             }
         }
@@ -160,7 +161,7 @@
             title: {
                 display: true,
                 text: "BY Age",
-                fontSize: 24,
+                fontSize: 20,
                 fontColor: "brown"
             },
             legend: {
@@ -171,8 +172,8 @@
             },
             layout: {
                 padding: {
-                    left: 20,
-                    right: 20
+                    left: 10,
+                    right: 10
                 }
             }
         }

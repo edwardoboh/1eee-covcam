@@ -4,12 +4,12 @@ const Schema = mongoose.Schema
 const SensorSchema = new Schema({
     temp: {
         type: String,
-        required: true
+        // required: true
         
     },
     pitch: {
         type: String,
-        required: true
+        // required: true
     },
     image: {
         type: Schema.Types.ObjectId

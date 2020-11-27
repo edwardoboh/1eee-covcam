@@ -3,11 +3,7 @@ p {
 }
 
 .login-container {
-    width: 460px;
-    margin-top: 150px;
+    width: 80vw;
+    margin-top: 20vh;
     text-align: center;
-}
-
-.covid-text {
-    margin-left: 5px;
 }

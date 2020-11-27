@@ -97,7 +97,56 @@ router.get("/table", (req, res) => {
 // @route   /sensor
 
 router.get("/sensor", (req, res) => {
-    res.render("sensor")
+    const tableBodyData = [
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 38.1,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img1.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 34.3,
+            lastName: `Normal`,
+            imageURL: `<img src="/image/img2.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 35.8,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img3.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        },
+        {
+            _id: `<span style = "color: darkblue; font-weight: bold">show</span`,
+            firstName: 36.4,
+            lastName: `Low`,
+            imageURL: `<img src="/image/img4.jpg" style="width: 80px">`,
+            sex: "fruit",
+            age: `<i class="fa fa-check" aria-hidden="true"></i>`,
+            dateCaptured: "2020-11-23T14:07:32.008Z",
+            __v: 0
+        }        
+    ]
+    res.render("sensor", {allData: tableBodyData})
+})
+
+// @desc    Sensors Page
+// @route   /sensor
+
+router.get("/demo", (req, res) => {
+    res.render("demo")
 })
 
 // @desc    imageUpload Page

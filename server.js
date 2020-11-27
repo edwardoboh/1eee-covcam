@@ -102,7 +102,7 @@ app.post ('/upload', upload.fields([{name: 'imageFile', maxCount: 1}, {name: 'au
     })
 })
 
-// GET Request to /file
+// GET Request to /file/image
 // GET All Image Files
 app.get('/files/image', (req, res) => {
     gfs.files.find({contentType: "image/jpeg" || "image/png"}).toArray((err, files) => {
@@ -118,7 +118,7 @@ app.get('/files/image', (req, res) => {
     })
 })
 
-// GET Request to /file
+// GET Request to /file/audio
 // GET All Audio Files
 app.get('/files/audio', (req, res) => {
     gfs.files.find({contentType: "audio/mpeg"}).toArray((err, files) => {
@@ -136,7 +136,7 @@ app.get('/files/audio', (req, res) => {
 
 
 
-// GET Request to /file
+// GET Request to /file/:filename
 // Get A Single Media File
 app.get('/files/:filename', (req, res) => {
     gfs.files.findOne({filename: req.params.filename}, (err, file) => {
@@ -149,7 +149,7 @@ app.get('/files/:filename', (req, res) => {
     })
 })
 
-// GET Request to /file
+// GET Request to /file/recieve/:filename
 // Display a Single Media File
 app.get('/files/recieve/:filename', (req, res) => {
     gfs.files.findOne({filename: req.params.filename}, (err, file) => {
@@ -187,6 +187,7 @@ app.get('/files', (req, res) => {
 
 
 // GET All Sensor Data
+// GET request to /sensor
 app.get('/sensor', (req, res) => {
     sensorData.find().then(resData => {
         if(resData.length === 0){
@@ -199,6 +200,7 @@ app.get('/sensor', (req, res) => {
 })
 
 // GET single sensor Reading
+// GET Request to /sensor/:_id
 app.get('/sensor/:_id', (req, res) => {
     sensorData.findOne({_id: req.params._id}, (err, senseData) => {
         if(!senseData || senseData.length === 0){
@@ -212,6 +214,7 @@ app.get('/sensor/:_id', (req, res) => {
 
 // 
 // Deleting a Single Media File
+// DELETE Request to /files/delete/:_id
 app.delete('/files/delete/:_id', (req, res) => {
     gfs.remove({_id: req.params._id, root: "uploads"}, (error, gridStore) => {
         if(error){
@@ -223,6 +226,7 @@ app.delete('/files/delete/:_id', (req, res) => {
 
 //
 // Deleting a single sensor value
+// DELETE Request to /sensor/:_id
 app.delete('/sensor/:_id', (req, res) => {
     sensorData.remove({_id: req.params._id}, (err, senseData) => {
         if(err){
